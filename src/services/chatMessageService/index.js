@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
 
-const messages = [{
+const _messages = [{
 
     id: v4(),
     sender:"M",
@@ -14,7 +14,11 @@ const messages = [{
     
 }];
 
-export const ChatMessageService = {
+export const ChatMessageService = (messages = _messages) => ({
+    // __setMessages(_messages){
+        // testing utiltiy function
+        // messages = _messages;
+    // },
     async getMessages(){
         
         return messages;
@@ -34,8 +38,9 @@ export const ChatMessageService = {
         return function*(){
 
             console.log("You subscribed");
+            // What should the subscribe generator return?
             
         }
 
     }
-}
+});
